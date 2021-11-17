@@ -1,0 +1,48 @@
+/* start of navbar  */
+.anchor {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  position: -webkit-sticky;
+  margin-bottom: 2em;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.navbar {
+  height: 60px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 1em;
+  padding: 0.5em 1em;
+}
+
+.logoName {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.logoImg {
+  object-fit: cover;
+  width: 32px;
+}
+
+/* end of navbar */
+
+@media screen and (max-width: 768px) {
+  .logoName h4 {
+    display: none;
+  }
+}

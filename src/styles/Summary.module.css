@@ -1,0 +1,26 @@
+.summary {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.point {
+  width: 50%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.summary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 800px) {
+  .summary {
+    flex-direction: column;
+  }
+}

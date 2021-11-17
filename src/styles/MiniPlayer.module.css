@@ -1,0 +1,67 @@
+/* miniplayer component started here */
+.miniplayer {
+  position: fixed;
+  bottom: 12%;
+  right: 3%;
+}
+
+.playButton span {
+  color: var(--successGreen);
+  background-color: #002333;
+  font-size: 1.6em;
+  padding: 0.6em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.playButton span:hover {
+  color: #002333;
+  background-color: var(--successGreen);
+}
+
+.player {
+  display: none;
+  position: relative;
+  width: 300px;
+  height: auto;
+  padding: 0.5em;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.player .closeButton {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  padding: 5px;
+  z-index: 1;
+  color: rgba(0, 0, 0, 0.753);
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #ececec;
+  cursor: pointer;
+}
+
+.player span:hover {
+  color: #929292;
+}
+
+.player img {
+  width: 100%;
+  height: 100%;
+  animation: miniplayerAnim 0.3s ease forwards;
+}
+
+.player p {
+  margin: 0.3rem auto;
+}
+/* miniplayer ended */
+@keyframes miniplayerAnim {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

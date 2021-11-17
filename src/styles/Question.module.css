@@ -1,0 +1,19 @@
+.question {
+  margin: 1.3rem auto;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 0.8rem;
+}
+
+.qtitle {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: var(--fontPrimary);
+  font-weight: 600;
+}
+
+.qtitle span {
+  color: var(--active);
+}

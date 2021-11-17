@@ -1,0 +1,20 @@
+.account {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.account p {
+  color: #0b47ee;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+}
+
+.anchor {
+  text-decoration: none;
+}

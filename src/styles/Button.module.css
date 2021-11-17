@@ -1,0 +1,17 @@
+.button {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--successGreen);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #002333;
+  color: #efefef;
+}

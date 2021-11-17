@@ -1,0 +1,116 @@
+/* progress bar component styles  */
+
+.progress {
+  overflow: hidden;
+  padding: 0 0.5rem;
+  position: fixed;
+  bottom: 25px;
+  width: calc(100vw - 100px);
+  height: 60px;
+  display: grid;
+  grid-template-columns: 50px 1fr auto;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #bbbbbb7e;
+}
+
+.backButton {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 40px;
+  background-color: #47f5901c;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background-color: #47f5904b;
+}
+
+.forwardButton {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: var(--successGreen);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.forwardButton:hover {
+  background-color: var(--fontPrimary);
+  color: #efefef;
+}
+
+.progressRange {
+  height: 4px;
+  width: 100%;
+  background-color: #cccccc;
+}
+
+.progressRangeLine {
+  height: 4px;
+  position: relative;
+  background-color: var(--fontPrimary);
+}
+
+.progressRangeLine::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: #000000;
+  position: absolute;
+  border-radius: 100%;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+  cursor: pointer;
+}
+
+.progressBar {
+  position: relative;
+}
+
+/* ----------- Tooltip ---------------------- */
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: var(--fontPrimary);
+  color: #efefef;
+  font-size: 0.8rem;
+  padding: 0.8em;
+  border-radius: 8px;
+  bottom: 15px;
+  left: 40%;
+}
+
+.tooltip::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  position: absolute;
+  background-color: var(--fontPrimary);
+  left: 42%;
+  top: 75%;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+/* ---------- Tooltip Ended --------------- */
+@media only screen and (max-width: 768px) {
+  .forwardButton span:first-child {
+    display: none;
+  }
+}
