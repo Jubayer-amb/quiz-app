@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from '../contexts/AuthContext';
 import '../styles/App.css';
 import Layout from './Layout';
 import Navbar from './navbar';
@@ -10,8 +11,8 @@ import Signup from './Pages/Signup';
 
 function App() {
     return (
-        <>
-            <Router>
+        <Router>
+            <AuthProvider>
                 <Navbar />
                 <Layout>
                     <Routes>
@@ -22,8 +23,8 @@ function App() {
                         <Route path="/result" element={<Result />} />
                     </Routes>
                 </Layout>
-            </Router>
-        </>
+            </AuthProvider>
+        </Router>
     );
 }
 
