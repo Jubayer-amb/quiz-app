@@ -4,7 +4,7 @@
   gap: 0.5em;
 }
 
-.account p {
+.account .anchor span {
   color: #0b47ee;
   font-weight: 500;
   font-size: 0.8rem;
@@ -17,4 +17,8 @@
 
 .anchor {
   text-decoration: none;
+}
+
+span {
+  cursor: pointer;
 }
