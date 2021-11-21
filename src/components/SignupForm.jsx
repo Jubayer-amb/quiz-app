@@ -20,7 +20,7 @@ const SignupForm = () => {
 
     const redirect = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
             return setError('Error from onSubmit: Passwords do not match!');
@@ -28,7 +28,7 @@ const SignupForm = () => {
         try {
             setError('');
             setLoading(true);
-            signup(email, password, name);
+            await signup(email, password, name);
             redirect('/');
         } catch (err) {
             setLoading(false);
