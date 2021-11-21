@@ -19,3 +19,12 @@ body {
   color: var(--fontPrimary);
 }
 
+.error {
+  color: var(--fontPrimary);
+  color: red;
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 8px;
+  border: 1px solid red;
+  background-color: #fc948454;
+}

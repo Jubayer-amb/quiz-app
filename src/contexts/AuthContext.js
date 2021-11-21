@@ -1,17 +1,17 @@
 import {
     createUserWithEmailAndPassword,
     getAuth,
+    onAuthStateChanged,
     signInWithEmailAndPassword,
     signOut,
     updateProfile,
-    onAuthStateChanged,
 } from 'firebase/auth';
 import { createContext, useContext, useEffect, useState } from 'react';
-import '../firebase';
+import app from '../firebase';
 
 const AuthContext = createContext();
 
-const auth = getAuth();
+const auth = getAuth(app);
 
 const useAuth = () => useContext(AuthContext);
 
@@ -29,21 +29,14 @@ const AuthProvider = ({ children }) => {
 
     // signup function
     const signup = async (email, password, username) => {
-        try {
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await createUserWithEmailAndPassword(auth, email, password);
 
-            // update profile
-            await updateProfile(auth.currentUser, { displayName: username });
+        // update profile
+        await updateProfile(auth.currentUser, { displayName: username });
 
-            const user = auth.currentUser;
-            console.log('from signup fuction ', userCredential.user);
-            setCurrentUser({ ...user });
-            setLoading(false);
-        } catch (error) {
-            console.log('error massage: ', error.message);
-            console.log('error code: ', error.code);
-            setLoading(false);
-        }
+        const user = auth.currentUser;
+        setCurrentUser({ ...user });
+        setLoading(false);
     };
 
     const signin = async (email, password) => {
