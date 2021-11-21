@@ -1,9 +1,13 @@
 import classes from '../styles/Button.module.css';
 
-const Button = ({ className, children, onClick }) => (
-    <div className={`${classes.button} ${className}`} onClick={onClick} aria-hidden>
+const Button = ({ className, children, onClick, type }) => (
+    <button
+        type={type === 'submit' ? 'submit' : 'button'}
+        className={`${classes.button} ${className}`}
+        onClick={onClick}
+    >
         {children}
-    </div>
+    </button>
 );
 
 export default Button;

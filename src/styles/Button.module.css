@@ -1,4 +1,6 @@
 .button {
+  outline: none;
+  border: none;
   display: grid;
   place-items: center;
   width: 100%;
