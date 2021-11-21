@@ -1,9 +1,8 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import classes from '../styles/TextInput.module.css';
 
-const TextInput = ({ type, placeholder, icon, ...args }) => (
+const TextInput = ({ type, placeholder, icon, value, onChange }) => (
     <div className={classes.textInput}>
-        <input type={type} placeholder={placeholder} {...args} />
+        <input type={type} placeholder={placeholder} value={value} onChange={onChange} />
         <span className="material-icons-outlined"> {icon} </span>
     </div>
 );
