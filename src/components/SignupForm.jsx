@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -22,17 +21,18 @@ const SignupForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (password !== confirmPassword) {
-            return setError('Error from onSubmit: Passwords do not match!');
-        }
-        try {
-            setError('');
-            setLoading(true);
-            await signup(email, password, name);
-            redirect('/');
-        } catch (err) {
-            setLoading(false);
-            setError(`Error from onSumbit: ${err.message}`);
+        if (password === confirmPassword) {
+            try {
+                setError('');
+                setLoading(true);
+                await signup(email, password, name);
+                redirect('/');
+            } catch (err) {
+                setLoading(false);
+                setError('Failed to create account!');
+            }
+        } else {
+            setError('Passwords do not match!');
         }
     };
 
