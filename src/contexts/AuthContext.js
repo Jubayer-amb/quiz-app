@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             console.log('from signin function ', userCredential.user);
         } catch (error) {
-            console.log('error massage: ', error.massage);
+            throw new Error(error);
         }
     };
 
