@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from '../contexts/AuthContext';
+import PrivateRoute from '../routes/PrivateRoute';
+import PublicRoute from '../routes/PublicRoute';
 import '../styles/App.css';
 import Layout from './Layout';
 import Navbar from './navbar';
@@ -17,10 +19,18 @@ function App() {
                 <Layout>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/quiz" element={<Quiz />} />
-                        <Route path="/signup" element={<Signup />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/result" element={<Result />} />
+                        <Route path="/quiz" element={<PrivateRoute />}>
+                            <Route path="" element={<Quiz />} />
+                        </Route>
+                        <Route path="/signup" element={<PublicRoute />}>
+                            <Route path="" element={<Signup />} />
+                        </Route>
+                        <Route path="/login" element={<PublicRoute />}>
+                            <Route path="" element={<Login />} />
+                        </Route>
+                        <Route path="/result" element={<PrivateRoute />}>
+                            <Route path="" element={<Result />} />
+                        </Route>
                     </Routes>
                 </Layout>
             </AuthProvider>
