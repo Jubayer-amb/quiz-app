@@ -23,6 +23,12 @@
   padding: 2rem 0;
 }
 
+/* class for failed login attempt */
+
+.incorrect {
+  border: 1px solid #f736369a;
+}
+
 .ilustration {
   padding: 5em 1em;
 }

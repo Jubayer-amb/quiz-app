@@ -18,13 +18,15 @@ const LoginForm = () => {
         e.preventDefault();
 
         try {
+            setError('');
             setLoading(true);
             await signin(email, password);
             setLoading(false);
             redirect('/');
         } catch (err) {
             console.log('error form server: ', err);
-            setError('Email or Password is incorrect!');
+            setError('Invalid Email or Password!');
+            setPassword('');
             setLoading(false);
         }
     };
@@ -36,6 +38,7 @@ const LoginForm = () => {
                 icon="alternate_email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className={`${error ? classes.incorrect : null}`}
             />
             <TextInput
                 type="password"
@@ -43,6 +46,7 @@ const LoginForm = () => {
                 icon="lock"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className={`${error ? classes.incorrect : null}`}
             />
             <Button type="submit" disabled={loading}>
                 Login
