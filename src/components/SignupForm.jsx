@@ -7,10 +7,10 @@ import Checkbox from './Checkbox';
 import TextInput from './TextInput';
 
 const SignupForm = () => {
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-    const [confirmPassword, setConfirmPassword] = useState();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [agree, setAgree] = useState();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ const SignupForm = () => {
                 redirect('/');
             } catch (err) {
                 setLoading(false);
-                setError('Failed to create account!');
+                setError('Failed to create an account!');
             }
         } else {
             setError('Passwords do not match!');
