@@ -41,8 +41,7 @@ const AuthProvider = ({ children }) => {
 
     const signin = async (email, password) => {
         try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            console.log('from signin function ', userCredential.user);
+            await signInWithEmailAndPassword(auth, email, password);
         } catch (error) {
             throw new Error(error);
         }
