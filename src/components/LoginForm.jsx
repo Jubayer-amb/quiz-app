@@ -24,7 +24,7 @@ const LoginForm = () => {
             setLoading(false);
             redirect('/');
         } catch (err) {
-            console.log('error form server: ', err);
+            console.log(err);
             setError('Invalid Email or Password!');
             setPassword('');
             setLoading(false);
